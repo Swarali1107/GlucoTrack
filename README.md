@@ -19,7 +19,7 @@ A modern, visually rich, and interactive health dashboard built using **Streamli
 
 ## 🖥️ Demo
 
-> 🔗 **[Live Demo (if deployed)](https://glucotrack-yyqukc6mby5kh8bzm52enq.streamlit.app/)**  
+> 🔗 **[Live Demo](https://glucotrack-yyqukc6mby5kh8bzm52enq.streamlit.app/)**  
 
 
 ## 🧠 Tech Stack
