@@ -11,11 +11,13 @@ from PIL import Image
 st.set_page_config(page_title="GlucoTrack: Diabetes Risk Companion", layout="wide")
 
 # Custom CSS for premium UI
+# Custom CSS for premium UI with better text visibility
 st.markdown("""
     <style>
     html, body, [class*="css"] {
         font-family: 'Inter', sans-serif;
         background-color: #f8fafc;
+        color: #111827;  /* Default text color */
     }
     .stApp {
         background: linear-gradient(135deg, #f9fafb, #f0f4f8);
@@ -29,10 +31,11 @@ st.markdown("""
         padding: 24px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         border: 1px solid #e5e7eb;
+        color: #111827 !important;  /* Ensure text color in containers */
     }
     .stButton>button {
         background-color: #3b82f6;
-        color: white;
+        color: white !important;
         font-weight: 500;
         font-size: 1rem;
         padding: 0.75rem 2rem;
@@ -46,15 +49,18 @@ st.markdown("""
         box-shadow: 0 4px 8px rgba(59, 130, 246, 0.25);
     }
     h1, h2, h3, h4 {
-        color: #111827;
+        color: #111827 !important;
         font-weight: 600;
     }
+    p, div {
+        color: #111827 !important;
+    }
     .risk-high {
-        color: #ef4444;
+        color: #dc2626 !important;  /* Darker red for better visibility */
         font-weight: 600;
     }
     .risk-low {
-        color: #10b981;
+        color: #059669 !important;  /* Darker green for better visibility */
         font-weight: 600;
     }
     .metric-card {
@@ -63,10 +69,28 @@ st.markdown("""
         padding: 16px;
         box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         border-left: 4px solid #3b82f6;
+        color: #111827 !important;
+    }
+    .metric-card p {
+        color: #374151 !important;
+    }
+    /* Additional specific selectors for Streamlit components */
+    .stNumberInput label, .stSelectbox label, .stTextInput label, .stSlider label {
+        color: #111827 !important;
+    }
+    .stNumberInput input, .stSelectbox select, .stTextInput input {
+        color: #111827 !important;
+    }
+    /* Footer text color */
+    footer {
+        color: #6b7280 !important;
+    }
+    /* Empty state text */
+    .empty-state p {
+        color: #6b7280 !important;
     }
     </style>
 """, unsafe_allow_html=True)
-
 # Load model
 model = joblib.load("diabetes_model.pkl")
 
